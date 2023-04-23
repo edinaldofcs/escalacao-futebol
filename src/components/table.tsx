@@ -29,7 +29,7 @@ const Table: NextPage<PageProps> = ({ data, info }) => {
   });
 
   return (
-    <div className="flex flex-col w-[45%] gap-4 justify-start items-center absolute bottom-0 p-2 h-[100vh] z-20">
+    <div className="flex flex-col w-[45%] gap-4 justify-start items-center absolute bottom-0 px-2 py-4 h-[100vh] z-20">
       <div className="flex flex-col w-full gap-2">
         {informacoes && (
           <div className="flex relative justify-center items-center gap-1">
