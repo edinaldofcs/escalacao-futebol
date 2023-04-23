@@ -35,8 +35,7 @@ const Home: NextPage<PageProps> = ({ data, info }) => {
   useEffect(() => {
     updateImg(info?.table.rows[1].c[2].v);
   }, []);
-  console.log(info);
-
+  // console.log(info);
   return (
     <div className="flex w-full h-[100vh] justify-center items-center">
       <div className="flex w-full max-w-[500px] h-[100vh] py-2 gap-1 relative items-center justify-between bg-white">
@@ -52,6 +51,7 @@ const Home: NextPage<PageProps> = ({ data, info }) => {
         layout="responsive"
         width={500}
         height={500}
+        unoptimized={true}
       />  
         </div>
       </div>
