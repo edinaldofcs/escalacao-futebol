@@ -2,7 +2,6 @@ import { useImgContext } from "@/context/useContext";
 import { PageProps } from "@/types/type";
 import type { NextPage } from "next";
 import { GetServerSideProps } from "next";
-import Image from "next/image";
 import { useEffect } from "react";
 import Table from "../components/table";
 
@@ -36,8 +35,8 @@ const Home: NextPage<PageProps> = ({ data, info }) => {
     if(img == ""){
       updateImg(info?.table.rows[1].c[2].v);
     }
-  }, [img]);
-  // console.log(info);
+  }, [img]); 
+
   return (
     <div className="flex w-full h-[100vh] justify-center items-center">
       <div className="flex w-full max-w-[500px] h-[100vh] py-2 gap-1 relative items-center justify-between bg-white">
@@ -47,14 +46,7 @@ const Home: NextPage<PageProps> = ({ data, info }) => {
           <div className="absolute bg-white w-2/5 h-[85vh] right-12 top-8 -z-10"></div>
           <div className="absolute bg-blue-950 w-2/5 h-[88vh] right-8 top-4 -z-10"></div>
           <div className="absolute bg-blue-900 w-3/5 h-[80vh] right-0 top-14 -z-10"></div>
-          <Image
-        src={img}
-        alt="Jogador"
-        layout="responsive"
-        width={500}
-        height={500}
-        unoptimized={true}
-      />  
+          <img className="bg-transparent" src={img} alt="teste" />
         </div>
       </div>
     </div>

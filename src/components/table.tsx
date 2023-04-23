@@ -1,7 +1,6 @@
 import { useImgContext } from "@/context/useContext";
 import { DataProps, PageProps } from "@/types/type";
 import { NextPage } from "next";
-import Image from "next/image";
 
 const Table: NextPage<PageProps> = ({ data, info }) => {
   const { updateImg } = useImgContext();
@@ -34,21 +33,17 @@ const Table: NextPage<PageProps> = ({ data, info }) => {
       <div className="flex flex-col w-full gap-2">
         {informacoes && (
           <div className="flex relative justify-center items-center gap-1">
-             <Image
+            <img
               src={informacoes.mandante}
-              alt="Time"
-              width={50}
-              height={50}
-              unoptimized={true}
-            />            
+              alt="teste"
+              className="w-[50px]  z-10"
+            />
             <span>x</span>
-            <Image
+            <img
               src={informacoes.visitante}
-              alt="Time"
-              width={50}
-              height={50}
-              unoptimized={true}
-            />          
+              alt="teste"
+              className="w-[50px] "
+            />
           </div>
         )}
         <div className="flex flex-col  justify-center items-center bg-blue-900 text-white text-[12px] mx-2 relative">
