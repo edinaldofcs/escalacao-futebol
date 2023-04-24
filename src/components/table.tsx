@@ -36,14 +36,14 @@ const Table: NextPage<PageProps> = ({ data, info }) => {
             <img
               src={informacoes.mandante}
               alt="teste"
-              className="w-[50px]  z-10"
+              className="w-[80px]  z-10"
             />
-            <span>x</span>
+            {/* <span>x</span>
             <img
               src={informacoes.visitante}
               alt="teste"
               className="w-[50px] "
-            />
+            /> */}
           </div>
         )}
         <div className="flex flex-col  justify-center items-center bg-blue-900 text-white text-[12px] mx-2 relative">
