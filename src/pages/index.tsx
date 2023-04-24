@@ -31,11 +31,12 @@ export const getServerSideProps: GetServerSideProps = async () => {
 
 const Home: NextPage<PageProps> = ({ data, info }) => {
   const { img, updateImg } = useImgContext();
+
   useEffect(() => {
-    if(img == ""){
+    if (img === "") {
       updateImg(info?.table.rows[1].c[2].v);
     }
-  }, [img]); 
+  }, [img, info?.table.rows, updateImg]);
 
   return (
     <div className="flex w-full h-[100vh] justify-center items-center">
