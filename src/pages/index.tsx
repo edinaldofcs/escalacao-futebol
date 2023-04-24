@@ -32,21 +32,21 @@ export const getServerSideProps: GetServerSideProps = async () => {
 const Home: NextPage<PageProps> = ({ data, info }) => {
   const { img, updateImg } = useImgContext();
   useEffect(() => {
-    if(img == ""){
+    if(info){
       updateImg(info?.table.rows[1].c[2].v);
     }
-  }, [img]); 
+  }, [info]); 
 
   return (
     <div className="flex w-full h-[100vh] justify-center items-center">
       <div className="flex w-full max-w-[500px] h-[100vh] py-2 gap-1 relative items-center justify-between bg-white">
         <Table data={data} info={info} />
-        <div className="absolute right-0 z-10 top-0 flex flex-col h-full items-center justify-center min-w-[50%]">
-          <div className="absolute bg-yellow-400 w-3/5 h-[87vh] right-0 top-6 -z-10"></div>
-          <div className="absolute bg-white w-2/5 h-[85vh] right-12 top-8 -z-10"></div>
-          <div className="absolute bg-blue-950 w-2/5 h-[88vh] right-8 top-4 -z-10"></div>
-          <div className="absolute bg-blue-900 w-3/5 h-[80vh] right-0 top-14 -z-10"></div>
-          <img className="bg-transparent" src={img} alt="teste" />
+        <div className="absolute right-0 z-10 top-0 flex flex-col h-full items-center justify-center min-w-[50%] w-[55%]">
+          <div className="absolute bg-yellow-400 w-[92%] h-[87vh] right-0 top-6 -z-10"></div>
+          <div className="absolute bg-white w-[70%] h-[85vh] right-12 top-8 -z-10"></div>
+          <div className="absolute bg-blue-950 w-[70%] h-[88vh] right-8 top-4 -z-10"></div>
+          <div className="absolute bg-blue-900 w-[92%] h-[80vh] right-0 top-14 -z-10"></div>
+          <img className="bg-red-200" src={img} alt="teste" />
         </div>
       </div>
     </div>
