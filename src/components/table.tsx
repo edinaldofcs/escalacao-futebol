@@ -7,12 +7,12 @@ const Table: NextPage<PageProps> = ({ data, info }) => {
   const titulares: DataProps[] = [];
   const reservas: DataProps[] = [];
   const informacoes = {
-    mandante: info?.table.rows[1].c[0].v,
-    tecnico: info?.table.rows[1].c[1].v,
-    tipo: info?.table.rows[1].c[3].v,
-    data: info?.table.rows[1].c[4].v,
-    hora: info?.table.rows[1].c[5].v,
-    estadio: info?.table.rows[1].c[6].v,
+    mandante: info?.table.rows[0].c[0].v,
+    tecnico: info?.table.rows[0].c[1].v,
+    tipo: info?.table.rows[0].c[3].v,
+    data: info?.table.rows[0].c[4].v,
+    hora: info?.table.rows[0].c[5].v,
+    estadio: info?.table.rows[0].c[6].v,
   };
 
   data?.table.rows.forEach((row: any) => {
@@ -25,11 +25,13 @@ const Table: NextPage<PageProps> = ({ data, info }) => {
   });
 
   data?.table.rows.forEach((row: any) => {
-    reservas.push({ nome: row.c[4].v, camisa: row.c[5].v, foto: row.c[6].v });
+    try {
+      reservas.push({ nome: row.c[4].v, camisa: row.c[5].v, foto: row.c[6].v });
+    } catch (error) {}
   });
 
   return (
-    <div className="flex flex-col w-[45%] gap-4 justify-start items-center absolute bottom-0 px-2 py-4 h-[100vh] z-20">
+    <div className="flex flex-col w-[45%] gap-4 justify-start items-center absolute bottom-0 p-2 h-[100vh] z-20">
       <div className="flex flex-col w-full gap-2">
         {informacoes && (
           <div className="flex relative justify-center items-center gap-1">
@@ -37,7 +39,7 @@ const Table: NextPage<PageProps> = ({ data, info }) => {
               src={informacoes.mandante}
               alt="teste"
               className="w-[80px]  z-10"
-            />           
+            />
           </div>
         )}
         <div className="flex flex-col  justify-center items-center bg-blue-900 text-white text-[12px] mx-2 relative">
@@ -52,8 +54,8 @@ const Table: NextPage<PageProps> = ({ data, info }) => {
 
       <div className="flex flex-col w-full h-fit border border-blue-900">
         {titulares.map((jogador) => (
-          <div key={jogador.nome} className="flex gap-2 w-full text-[14px]">
-            <span className="bg-blue-950 text-yellow-400 w-[25px] text-center py-1">
+          <div key={Math.random()} className="flex gap-2 w-full text-[14px]">
+            <span className="bg-blue-950 text-yellow-400 w-[25px] text-center py-[2px]">
               {jogador.camisa}
             </span>
             <span
@@ -71,7 +73,9 @@ const Table: NextPage<PageProps> = ({ data, info }) => {
         ))}
         <div className="text-[12px] bg-blue-950">
           <span className="text-yellow-400 text-center">TEC</span>
-          <span className="pl-2 text-center text-white">{informacoes.tecnico}</span>
+          <span className="pl-2 text-center text-white">
+            {informacoes.tecnico}
+          </span>
         </div>
       </div>
 
@@ -82,10 +86,7 @@ const Table: NextPage<PageProps> = ({ data, info }) => {
         <div className="flex w-full h-fit flex-wrap text-[8px] justify-center font-bold relative">
           {reservas.map((jogador) => (
             <div key={jogador.nome} className="m-[2px]">
-              <span
-                key={jogador.camisa}
-                className="text-yellow-500 text-center"
-              >
+              <span key={Math.random()} className="text-yellow-500 text-center">
                 {jogador.camisa}.
               </span>
               <span key={jogador.nome} className=" text-white">

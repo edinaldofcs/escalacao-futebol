@@ -31,10 +31,11 @@ export const getServerSideProps: GetServerSideProps = async () => {
 
 const Home: NextPage<PageProps> = ({ data, info }) => {
   const { img, updateImg } = useImgContext();
-
+  console.log(data);
+  
   useEffect(() => {
     if (img === "") {
-      updateImg(info?.table.rows[1].c[2].v);
+      updateImg(info?.table.rows[0].c[2].v);
     }
   }, [img, info?.table.rows, updateImg]);
 
