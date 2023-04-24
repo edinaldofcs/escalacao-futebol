@@ -7,13 +7,14 @@ const Table: NextPage<PageProps> = ({ data, info }) => {
   const titulares: DataProps[] = [];
   const reservas: DataProps[] = [];
   const informacoes = {
-    mandante: info?.table.rows[0].c[0].v,
-    tecnico: info?.table.rows[0].c[1].v,
-    tipo: info?.table.rows[0].c[3].v,
-    data: info?.table.rows[0].c[4].v,
-    hora: info?.table.rows[0].c[5].v,
-    estadio: info?.table.rows[0].c[6].v,
+    mandante: info?.table.rows[1].c[0].v,
+    tecnico: info?.table.rows[1].c[1].v,
+    tipo: info?.table.rows[1].c[3].v,
+    data: info?.table.rows[1].c[4].v,
+    hora: info?.table.rows[1].c[5].v,
+    estadio: info?.table.rows[1].c[6].v,
   };
+// console.log(informacoes);
 
   data?.table.rows.forEach((row: any) => {
     titulares.push({
