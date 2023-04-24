@@ -8,7 +8,7 @@ const Table: NextPage<PageProps> = ({ data, info }) => {
   const reservas: DataProps[] = [];
   const informacoes = {
     mandante: info?.table.rows[1].c[0].v,
-    visitante: info?.table.rows[1].c[1].v,
+    tecnico: info?.table.rows[1].c[1].v,
     tipo: info?.table.rows[1].c[3].v,
     data: info?.table.rows[1].c[4].v,
     hora: info?.table.rows[1].c[5].v,
@@ -37,13 +37,7 @@ const Table: NextPage<PageProps> = ({ data, info }) => {
               src={informacoes.mandante}
               alt="teste"
               className="w-[80px]  z-10"
-            />
-            {/* <span>x</span>
-            <img
-              src={informacoes.visitante}
-              alt="teste"
-              className="w-[50px] "
-            /> */}
+            />           
           </div>
         )}
         <div className="flex flex-col  justify-center items-center bg-blue-900 text-white text-[12px] mx-2 relative">
@@ -77,7 +71,7 @@ const Table: NextPage<PageProps> = ({ data, info }) => {
         ))}
         <div className="text-[12px] bg-blue-950">
           <span className="text-yellow-400 text-center">TEC</span>
-          <span className="pl-2 text-center text-white">NILSON CORREA</span>
+          <span className="pl-2 text-center text-white">{informacoes.tecnico}</span>
         </div>
       </div>
 
