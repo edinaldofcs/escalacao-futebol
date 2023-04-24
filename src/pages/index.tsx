@@ -47,12 +47,26 @@ const Home: NextPage<PageProps> = ({ data, info }) => {
           style={{
             backgroundImage:
               "url(https://t3.ftcdn.net/jpg/04/46/65/06/360_F_446650676_BqS3AgYlcCUDXo7IfN3nAinIp1Rpd303.jpg)",
-           backgroundSize: 'cover'}}
+            backgroundSize: "cover",
+          }}
         >
           <div className="absolute bg-yellow-400 w-3/5 h-[80vh] right-0 top-6 -z-10"></div>
           <div className="absolute bg-white w-2/5 h-[80vh] right-12 top-8 -z-10"></div>
           <div className="absolute bg-blue-950 w-2/5 h-[80vh] right-8 top-4 -z-10"></div>
-          <div className="absolute bg-blue-900 w-3/5 h-[80vh] right-0 top-14 -z-10"></div>
+          <div className="absolute bg-blue-900 w-3/5 h-[80vh] right-0 top-14 -z-10 ">
+            <div
+              className="absolute w-full h-[80vh] right-0 top-14"
+              style={{
+                backgroundImage:
+                  "url(https://i.ibb.co/Ttkwg6m/judivan-preview-rev-1.png)",
+                backgroundSize: "cover",
+                backgroundRepeat: 'no-repeat',
+                transform: "scaleX(-1)",
+                backgroundPosition: "85% center",
+                opacity: '20%'
+              }}
+            ></div>
+          </div>
           <img
             className="absolute bg-transparent min-w-[300px] max-w-[450px] right-0 top-1/2 -translate-y-1/2"
             src={img}
