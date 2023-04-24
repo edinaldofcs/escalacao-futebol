@@ -42,7 +42,7 @@ const Home: NextPage<PageProps> = ({ data, info }) => {
     <div className="flex w-full h-[100vh] justify-center items-center">
       <div className="flex w-full max-w-[500px] h-[100vh] py-2 gap-1 relative items-center justify-between bg-white">
         <Table data={data} info={info} />
-        <div className="relative z-10 top-0 flex flex-col h-full items-center justify-center min-w-[100%] opacity-70">
+        <div className="relative z-10 top-0 flex flex-col h-full items-center justify-center min-w-[100%] opacity-90">
           <div className="absolute bg-yellow-400 w-3/5 h-[80vh] right-0 top-6 -z-10"></div>
           <div className="absolute bg-white w-2/5 h-[85vh] right-12 top-8 -z-10"></div>
           <div className="absolute bg-blue-950 w-2/5 h-[80vh] right-8 top-4 -z-10"></div>
