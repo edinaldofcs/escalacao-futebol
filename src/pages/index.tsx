@@ -42,12 +42,22 @@ const Home: NextPage<PageProps> = ({ data, info }) => {
     <div className="flex w-full h-[100vh] justify-center items-center">
       <div className="flex w-full max-w-[500px] h-[100vh] py-2 gap-1 relative items-center justify-between bg-white">
         <Table data={data} info={info} />
-        <div className="relative z-10 top-0 flex flex-col h-full items-center justify-center min-w-[100%]">
+        <div
+          className="relative z-10 top-0 flex flex-col h-full items-center justify-center min-w-[100%]"
+          style={{
+            backgroundImage:
+              "url(https://t3.ftcdn.net/jpg/04/46/65/06/360_F_446650676_BqS3AgYlcCUDXo7IfN3nAinIp1Rpd303.jpg)",
+           backgroundSize: 'cover'}}
+        >
           <div className="absolute bg-yellow-400 w-3/5 h-[80vh] right-0 top-6 -z-10"></div>
-          <div className="absolute bg-white w-2/5 h-[85vh] right-12 top-8 -z-10"></div>
+          <div className="absolute bg-white w-2/5 h-[80vh] right-12 top-8 -z-10"></div>
           <div className="absolute bg-blue-950 w-2/5 h-[80vh] right-8 top-4 -z-10"></div>
           <div className="absolute bg-blue-900 w-3/5 h-[80vh] right-0 top-14 -z-10"></div>
-          <img className="absolute bg-transparent min-w-[300px] max-w-[450px] right-0 top-1/2 -translate-y-1/2" src={img} alt="teste" />
+          <img
+            className="absolute bg-transparent min-w-[300px] max-w-[450px] right-0 top-1/2 -translate-y-1/2"
+            src={img}
+            alt="teste"
+          />
         </div>
       </div>
     </div>
